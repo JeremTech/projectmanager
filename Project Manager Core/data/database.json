@@ -1,0 +1,6 @@
+{
+	"server_address" : "localhost",
+	"user" : "root",
+	"password" : "",
+	"database_name" : "projectmanager"
+}

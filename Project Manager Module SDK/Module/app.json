@@ -1,0 +1,5 @@
+{
+	"name": "Module SDK v3",
+	"description": "Permet de créer un module pour Project Manager",
+	"require_login" : true
+}

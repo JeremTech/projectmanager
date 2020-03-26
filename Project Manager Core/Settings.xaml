@@ -1,0 +1,53 @@
+﻿<Window x:Class="Project_Manager_Core.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Manager_Core"
+        mc:Ignorable="d"
+        Title="Paramètres" Height="450" Width="626" ResizeMode="CanMinimize" Icon="resources/images/settings_icon.png" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid Background="#FF1A1A1A">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="313*"/>
+            <ColumnDefinition Width="590*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FF2D2D30" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="637" Grid.ColumnSpan="2"/>
+
+        <Label x:Name="label" Content="Paramètres" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" Height="32" Width="505" Foreground="White" FontFamily="Corbel" FontSize="18" Grid.ColumnSpan="2"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="32" Margin="348,7,0,0" VerticalAlignment="Top" Width="33" Source="resources/images/settings_icon.png" RenderTransformOrigin="4.97,-0.094" Grid.Column="1"/>
+        <Rectangle Fill="#FF252527" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="199" Margin="0,51,0,0"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="18,188,0,0" VerticalAlignment="Top" Width="366" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <ProgressBar x:Name="connection_progressbar" HorizontalAlignment="Left" Height="8" Margin="0,47,0,0" VerticalAlignment="Top" Width="822" Foreground="#FF06B025" Grid.ColumnSpan="2"/>
+        <Label x:Name="general_label_Copy" Content="Base de données" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="178" Foreground="#FF7692CF" FontSize="14"/>
+        <Label x:Name="general_label_Copy1" Content="Fichiers temporaires" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Width="178" Foreground="#FF434955" FontSize="14"/>
+        <Label x:Name="general_label_Copy2" Content="Logs" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="178" Foreground="#FF434955" FontSize="14"/>
+        <Grid x:Name="database_settings_grid" HorizontalAlignment="Left" Height="304" Margin="211,64,0,0" VerticalAlignment="Top" Width="409" Background="#FF1A1A1A" Grid.ColumnSpan="2">
+            <GroupBox x:Name="groupBox" Header="Base de données" HorizontalAlignment="Left" Height="294" VerticalAlignment="Top" Width="393" Foreground="White" BorderBrush="White"/>
+            <TextBox x:Name="database_adress_textbox" HorizontalAlignment="Left" Height="23" Margin="14,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Foreground="White" Background="#FF2D2D30" TextChanged="database_adress_textbox_TextChanged"/>
+            <Label x:Name="label1" Content="Adresse de la base données :" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <TextBox x:Name="database_name_textbox" HorizontalAlignment="Left" Height="23" Margin="14,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Foreground="White" Background="#FF2D2D30" TextChanged="database_name_textbox_TextChanged"/>
+            <Label x:Name="label1_Copy" Content="Nom de la base de données à utiliser :" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <TextBox x:Name="database_username_textbox" HorizontalAlignment="Left" Height="23" Margin="14,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Foreground="White" Background="#FF2D2D30"/>
+            <Label x:Name="label1_Copy1" Content="Nom d'utilisateur pour la connexion à la base de données :" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <Label x:Name="label1_Copy2" Content="Mot de passe pour la connexion à la base de données :" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <PasswordBox x:Name="database_password_passwordBox" HorizontalAlignment="Left" Margin="14,213,0,0" VerticalAlignment="Top" Width="364" Height="22" Background="#FF2D2D30" Foreground="White"/>
+            <Button x:Name="database_test_connection_button" Content="Tester la connexion" HorizontalAlignment="Left" Margin="109,246,0,0" VerticalAlignment="Top" Width="129" Height="28" Click="database_test_connection_button_Click"/>
+            <Label x:Name="database_test_square_label" Content="■" HorizontalAlignment="Left" Margin="243,246,0,0" VerticalAlignment="Top" Height="28" Width="41" FontSize="16" VerticalContentAlignment="Center" Foreground="#FF57839C"/>
+            <ProgressBar x:Name="database_test_progressbar" HorizontalAlignment="Left" Height="9" Margin="109,274,0,0" VerticalAlignment="Top" Width="129"/>
+        </Grid>
+        <Rectangle Fill="#FF2D2D30" HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="620" Grid.ColumnSpan="2" Margin="0,368,0,0"/>
+        <Separator HorizontalAlignment="Left" Height="17" Margin="0,359,0,0" VerticalAlignment="Top" Width="620" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Button x:Name="save_button" Content="Sauvegarder" Grid.Column="1" HorizontalAlignment="Left" Margin="285,376,0,0" VerticalAlignment="Top" Width="104" Height="26" Click="save_button_Click"/>
+        <Label x:Name="info_label" Content="Certains paramètres sont incorrects" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="485" Foreground="Red" Visibility="Hidden"/>
+
+    </Grid>
+</Window>
